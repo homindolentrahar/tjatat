@@ -1,13 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tjatat/domain/auth/i_auth_facade.dart';
+import 'package:injectable/injectable.dart';
 import 'package:tjatat/domain/auth/auth_user.dart';
-
-part 'auth_state.dart';
+import 'package:tjatat/domain/auth/i_auth_facade.dart';
 
 part 'auth_cubit.freezed.dart';
+part 'auth_state.dart';
 
 @injectable
 class AuthCubit extends Cubit<AuthState> {
@@ -15,12 +13,14 @@ class AuthCubit extends Cubit<AuthState> {
 
   AuthCubit(this._authFacade) : super(const AuthState.initial());
 
-  Future<void> authCheckRequest() async {
+  Future<void> checkAuthStatus() async {
     final userOption = await _authFacade.getSignedInUser();
 
-    userOption.fold(
-      () => emit(const AuthState.unauthenticated()),
-      (authUser) => emit(AuthState.authenticated(authUser)),
+    emit(
+      userOption.fold(
+        () => const AuthState.unauthenticated(),
+        (authUser) => AuthState.authenticated(authUser: authUser),
+      ),
     );
   }
 

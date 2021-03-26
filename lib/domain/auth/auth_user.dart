@@ -5,10 +5,11 @@ import 'package:tjatat/domain/core/value_objects.dart';
 part 'auth_user.freezed.dart';
 
 @freezed
-abstract class AuthUser with _$AuthUser {
+class AuthUser with _$AuthUser {
   const factory AuthUser({
-    @required UniqueId id,
-    @required EmailAddress email,
-    @required DateTime loginAt,
-  }) = _User;
+    required UniqueId id,
+    required Username username,
+    required EmailAddress emailAddress,
+    required DateTime lastSignedIn,
+  }) = _AuthUser;
 }

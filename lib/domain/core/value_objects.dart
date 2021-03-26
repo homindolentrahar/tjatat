@@ -1,5 +1,5 @@
-import 'package:meta/meta.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:tjatat/domain/core/errors.dart';
 import 'package:tjatat/domain/core/failures.dart';
 import 'package:uuid/uuid.dart';
@@ -25,6 +25,7 @@ abstract class ValueObject<T> {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
+
     return other is ValueObject<T> && other.value == value;
   }
 
@@ -37,12 +38,11 @@ class UniqueId extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory UniqueId() {
-    return UniqueId._(Right(Uuid().v1()));
+    return UniqueId._(right(const Uuid().v1()));
   }
 
-  factory UniqueId.fromUniqueString(String uniqueId) {
-    assert(uniqueId != null);
-    return UniqueId._(Right(uniqueId));
+  factory UniqueId.fromUniqueString(String input) {
+    return UniqueId._(right(input));
   }
 
   const UniqueId._(this.value);

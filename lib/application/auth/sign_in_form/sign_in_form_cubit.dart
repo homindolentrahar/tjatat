@@ -1,15 +1,13 @@
-import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:tjatat/domain/auth/auth_failure.dart';
 import 'package:tjatat/domain/auth/i_auth_facade.dart';
 import 'package:tjatat/domain/auth/value_objects.dart';
 
-part 'sign_in_form_state.dart';
-
 part 'sign_in_form_cubit.freezed.dart';
+part 'sign_in_form_state.dart';
 
 @injectable
 class SignInFormCubit extends Cubit<SignInFormState> {
@@ -17,86 +15,50 @@ class SignInFormCubit extends Cubit<SignInFormState> {
 
   SignInFormCubit(this._authFacade) : super(SignInFormState.initial());
 
-  void emailChanged(String email) {
+  void emailChanged(String emailStr) {
     emit(
       state.copyWith(
-        emailAddress: EmailAddress(email),
-        authFailureOrSuccessOption: const None(),
+        emailAddress: EmailAddress(emailStr),
+        authFailureOrSuccessOption: none(),
       ),
     );
   }
 
-  void passwordChanged(String password) {
+  void passwordChanged(String passwordStr) {
     emit(
       state.copyWith(
-        password: Password(password),
-        authFailureOrSuccessOption: const None(),
+        password: Password(passwordStr),
+        authFailureOrSuccessOption: none(),
       ),
     );
   }
 
-  void confirmPasswordChange(String confirmPassword) {
+  void usernameChanged(String usernameStr) {
     emit(
       state.copyWith(
-        confirmPassword: ConfirmPassword(
-          confirmPassword,
-          state.password.getOrCrash(),
-        ),
-        authFailureOrSuccessOption: const None(),
+        username: Username(usernameStr),
+        authFailureOrSuccessOption: none(),
       ),
     );
   }
 
-  void registerWithEmailAndPassword() {
-    _performActionOnAuthFacadeWithEmailAndPassword(
-        _authFacade.registerWithEmailAndPassword);
-  }
-
-  void signInWithEmailAndPassword() {
-    _performActionOnAuthFacadeWithEmailAndPassword(
-        _authFacade.signInWithEmailAndPassword);
-  }
-
-  Future<void> signInWithGoogle() async {
-    emit(
-      state.copyWith(
-        isSubmitting: true,
-        authFailureOrSuccessOption: const None(),
-      ),
-    );
-    final failureOrSuccess = await _authFacade.signInWithGoogle();
-    emit(
-      state.copyWith(
-        isSubmitting: false,
-        authFailureOrSuccessOption: Some(failureOrSuccess),
-      ),
-    );
-  }
-
-  Future<void> _performActionOnAuthFacadeWithEmailAndPassword(
-    Future<Either<AuthFailure, Unit>> Function({
-      @required EmailAddress emailAddress,
-      @required Password password,
-    })
-        forwardCall,
-  ) async {
-    Either<AuthFailure, Unit> failureOrSuccess;
+  Future<void> registerWithEmailAndPassword() async {
+    Either<AuthFailure, Unit>? failureOrSuccess;
 
     final isEmailValid = state.emailAddress.isValid();
     final isPasswordValid = state.password.isValid();
-    final isConfirmPasswordValid = state.confirmPassword.isValid();
+    final isUsernameValid = state.username.isValid();
 
-    if (isEmailValid &&
-        isPasswordValid &&
-        isConfirmPasswordValid &&
-        state.password.getOrCrash() == state.confirmPassword.getOrCrash()) {
+    if (isEmailValid && isPasswordValid && isUsernameValid) {
       emit(
         state.copyWith(
           isSubmitting: true,
-          authFailureOrSuccessOption: const None(),
+          authFailureOrSuccessOption: none(),
         ),
       );
-      failureOrSuccess = await forwardCall(
+
+      failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
+        username: state.username,
         emailAddress: state.emailAddress,
         password: state.password,
       );
@@ -105,8 +67,53 @@ class SignInFormCubit extends Cubit<SignInFormState> {
     emit(
       state.copyWith(
         isSubmitting: false,
-        showErrorMessages: true,
+        showErrorMessage: true,
         authFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
+  }
+
+  Future<void> signInWithEmailAndPassword() async {
+    Either<AuthFailure, Unit>? failureOrSuccess;
+
+    final isEmailValid = state.emailAddress.isValid();
+    final isPasswordValid = state.password.isValid();
+
+    if (isEmailValid && isPasswordValid) {
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          authFailureOrSuccessOption: none(),
+        ),
+      );
+
+      failureOrSuccess = await _authFacade.signInWithEmailAndPassword(
+        emailAddress: state.emailAddress,
+        password: state.password,
+      );
+    }
+
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessage: true,
+        authFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
+  }
+
+  Future<void> signInWithGoogle() async {
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+        authFailureOrSuccessOption: none(),
+      ),
+    );
+    final failureOrSuccess = await _authFacade.signInWithGoogle();
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        authFailureOrSuccessOption: some(failureOrSuccess),
       ),
     );
   }

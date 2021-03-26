@@ -3,9 +3,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'auth_failure.freezed.dart';
 
 @freezed
-abstract class AuthFailure with _$AuthFailure{
-  factory AuthFailure.cancelByUser() = CancelByUser;
-  factory AuthFailure.serverError() = ServerError;
-  factory AuthFailure.emailAlreadyInUse() = EmailAlreadyInUse;
-  factory AuthFailure.invalidEmailAndPassword() = InvalidEmailAndPassword;
+class AuthFailure with _$AuthFailure {
+  const factory AuthFailure.cancelledByUser() = _CancelledByUser;
+  const factory AuthFailure.serverError() = _ServerError;
+  const factory AuthFailure.emailAlreadyInUse() = _EmailAlreadyInUse;
+  const factory AuthFailure.invalidEmailAndPassword() =
+      _InvalidEmailAndPassword;
+  const factory AuthFailure.insufficientPermission() = _InsufficientPermission;
+  const factory AuthFailure.unexpected() = _Unexpected;
 }

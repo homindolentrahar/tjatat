@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'auth_user.dart';
 
@@ -9,42 +9,51 @@ part of 'auth_user.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$AuthUserTearOff {
   const _$AuthUserTearOff();
 
-// ignore: unused_element
-  _User call(
-      {@required UniqueId id,
-      @required EmailAddress email,
-      @required DateTime loginAt}) {
-    return _User(
+  _AuthUser call(
+      {required UniqueId id,
+      required Username username,
+      required EmailAddress emailAddress,
+      required DateTime lastSignedIn}) {
+    return _AuthUser(
       id: id,
-      email: email,
-      loginAt: loginAt,
+      username: username,
+      emailAddress: emailAddress,
+      lastSignedIn: lastSignedIn,
     );
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $AuthUser = _$AuthUserTearOff();
 
 /// @nodoc
 mixin _$AuthUser {
-  UniqueId get id;
-  EmailAddress get email;
-  DateTime get loginAt;
+  UniqueId get id => throw _privateConstructorUsedError;
+  Username get username => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  DateTime get lastSignedIn => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AuthUserCopyWith<AuthUser> get copyWith;
+  $AuthUserCopyWith<AuthUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AuthUserCopyWith<$Res> {
   factory $AuthUserCopyWith(AuthUser value, $Res Function(AuthUser) then) =
       _$AuthUserCopyWithImpl<$Res>;
-  $Res call({UniqueId id, EmailAddress email, DateTime loginAt});
+  $Res call(
+      {UniqueId id,
+      Username username,
+      EmailAddress emailAddress,
+      DateTime lastSignedIn});
 }
 
 /// @nodoc
@@ -57,107 +66,151 @@ class _$AuthUserCopyWithImpl<$Res> implements $AuthUserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object email = freezed,
-    Object loginAt = freezed,
+    Object? id = freezed,
+    Object? username = freezed,
+    Object? emailAddress = freezed,
+    Object? lastSignedIn = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as UniqueId,
-      email: email == freezed ? _value.email : email as EmailAddress,
-      loginAt: loginAt == freezed ? _value.loginAt : loginAt as DateTime,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Username,
+      emailAddress: emailAddress == freezed
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      lastSignedIn: lastSignedIn == freezed
+          ? _value.lastSignedIn
+          : lastSignedIn // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$UserCopyWith<$Res> implements $AuthUserCopyWith<$Res> {
-  factory _$UserCopyWith(_User value, $Res Function(_User) then) =
-      __$UserCopyWithImpl<$Res>;
+abstract class _$AuthUserCopyWith<$Res> implements $AuthUserCopyWith<$Res> {
+  factory _$AuthUserCopyWith(_AuthUser value, $Res Function(_AuthUser) then) =
+      __$AuthUserCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, EmailAddress email, DateTime loginAt});
+  $Res call(
+      {UniqueId id,
+      Username username,
+      EmailAddress emailAddress,
+      DateTime lastSignedIn});
 }
 
 /// @nodoc
-class __$UserCopyWithImpl<$Res> extends _$AuthUserCopyWithImpl<$Res>
-    implements _$UserCopyWith<$Res> {
-  __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
-      : super(_value, (v) => _then(v as _User));
+class __$AuthUserCopyWithImpl<$Res> extends _$AuthUserCopyWithImpl<$Res>
+    implements _$AuthUserCopyWith<$Res> {
+  __$AuthUserCopyWithImpl(_AuthUser _value, $Res Function(_AuthUser) _then)
+      : super(_value, (v) => _then(v as _AuthUser));
 
   @override
-  _User get _value => super._value as _User;
+  _AuthUser get _value => super._value as _AuthUser;
 
   @override
   $Res call({
-    Object id = freezed,
-    Object email = freezed,
-    Object loginAt = freezed,
+    Object? id = freezed,
+    Object? username = freezed,
+    Object? emailAddress = freezed,
+    Object? lastSignedIn = freezed,
   }) {
-    return _then(_User(
-      id: id == freezed ? _value.id : id as UniqueId,
-      email: email == freezed ? _value.email : email as EmailAddress,
-      loginAt: loginAt == freezed ? _value.loginAt : loginAt as DateTime,
+    return _then(_AuthUser(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Username,
+      emailAddress: emailAddress == freezed
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      lastSignedIn: lastSignedIn == freezed
+          ? _value.lastSignedIn
+          : lastSignedIn // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
 
 /// @nodoc
-class _$_User implements _User {
-  const _$_User(
-      {@required this.id, @required this.email, @required this.loginAt})
-      : assert(id != null),
-        assert(email != null),
-        assert(loginAt != null);
+class _$_AuthUser implements _AuthUser {
+  const _$_AuthUser(
+      {required this.id,
+      required this.username,
+      required this.emailAddress,
+      required this.lastSignedIn});
 
   @override
   final UniqueId id;
   @override
-  final EmailAddress email;
+  final Username username;
   @override
-  final DateTime loginAt;
+  final EmailAddress emailAddress;
+  @override
+  final DateTime lastSignedIn;
 
   @override
   String toString() {
-    return 'AuthUser(id: $id, email: $email, loginAt: $loginAt)';
+    return 'AuthUser(id: $id, username: $username, emailAddress: $emailAddress, lastSignedIn: $lastSignedIn)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _User &&
+        (other is _AuthUser &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.loginAt, loginAt) ||
-                const DeepCollectionEquality().equals(other.loginAt, loginAt)));
+            (identical(other.username, username) ||
+                const DeepCollectionEquality()
+                    .equals(other.username, username)) &&
+            (identical(other.emailAddress, emailAddress) ||
+                const DeepCollectionEquality()
+                    .equals(other.emailAddress, emailAddress)) &&
+            (identical(other.lastSignedIn, lastSignedIn) ||
+                const DeepCollectionEquality()
+                    .equals(other.lastSignedIn, lastSignedIn)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(loginAt);
+      const DeepCollectionEquality().hash(username) ^
+      const DeepCollectionEquality().hash(emailAddress) ^
+      const DeepCollectionEquality().hash(lastSignedIn);
 
   @JsonKey(ignore: true)
   @override
-  _$UserCopyWith<_User> get copyWith =>
-      __$UserCopyWithImpl<_User>(this, _$identity);
+  _$AuthUserCopyWith<_AuthUser> get copyWith =>
+      __$AuthUserCopyWithImpl<_AuthUser>(this, _$identity);
 }
 
-abstract class _User implements AuthUser {
-  const factory _User(
-      {@required UniqueId id,
-      @required EmailAddress email,
-      @required DateTime loginAt}) = _$_User;
+abstract class _AuthUser implements AuthUser {
+  const factory _AuthUser(
+      {required UniqueId id,
+      required Username username,
+      required EmailAddress emailAddress,
+      required DateTime lastSignedIn}) = _$_AuthUser;
 
   @override
-  UniqueId get id;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
-  EmailAddress get email;
+  Username get username => throw _privateConstructorUsedError;
   @override
-  DateTime get loginAt;
+  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  @override
+  DateTime get lastSignedIn => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserCopyWith<_User> get copyWith;
+  _$AuthUserCopyWith<_AuthUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
