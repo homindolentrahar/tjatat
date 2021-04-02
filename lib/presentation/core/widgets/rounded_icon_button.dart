@@ -6,7 +6,7 @@ class RoundedIconButton extends StatelessWidget {
   final double height;
   final String text;
   final Widget icon;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   const RoundedIconButton({
     Key? key,
@@ -29,11 +29,14 @@ class RoundedIconButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
+      disabledColor: AppColor.gray,
+      disabledElevation: 0,
       onPressed: onPressed,
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           icon,
-          const SizedBox(width: 15),
+          const SizedBox(width: 20),
           Text(
             text,
             style: Theme.of(context).textTheme.button?.copyWith(

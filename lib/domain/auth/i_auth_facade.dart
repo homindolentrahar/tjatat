@@ -4,6 +4,8 @@ import 'package:tjatat/domain/auth/auth_user.dart';
 import 'package:tjatat/domain/auth/value_objects.dart';
 
 abstract class IAuthFacade {
+  bool get isUserVerified;
+
   Future<Option<AuthUser>> getSignedInUser();
 
   Future<void> signOut();
@@ -20,4 +22,10 @@ abstract class IAuthFacade {
   });
 
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
+
+  Future<Either<AuthFailure, Unit>> sendForgotPasswordEmail({
+    required EmailAddress emailAddress,
+  });
+
+  Future<Either<AuthFailure, Unit>> verifyEmailAddress();
 }

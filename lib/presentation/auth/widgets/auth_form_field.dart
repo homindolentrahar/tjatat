@@ -53,13 +53,6 @@ class AuthFormField extends HookWidget {
       _obscureText = false;
     }
 
-    // final _errorSizeAnimationController = useAnimationController(
-    //   duration: 400.milliseconds,
-    // );
-    // final _errorSizeAnimation = useAnimation(
-    //   0.0.tweenTo(48.0).animate(_errorSizeAnimationController),
-    // );
-
     useEffect(() {
       if (_validator.value != "") {
         // _errorSizeAnimationController.forward();

@@ -7,5 +7,8 @@ class AuthState with _$AuthState {
   const factory AuthState.authenticated({required AuthUser authUser}) =
       _Authenticated;
 
+  const factory AuthState.unverified({required AuthUser authUser}) =
+      _Unverified;
+
   const factory AuthState.unauthenticated() = _Unauthenticated;
 }

@@ -30,8 +30,10 @@ class MainPage extends StatelessWidget {
                 width: Constant.screenWidth(context) * 0.8,
                 text: "Logout",
                 onPressed: () {
-                  DialogHelper.loading(context);
-                  context.read<AuthCubit>().signOut();
+                  context
+                      .read<AuthCubit>()
+                      .signOut()
+                      .then((_) => DialogHelper.loading(context));
                 },
               ),
             ],

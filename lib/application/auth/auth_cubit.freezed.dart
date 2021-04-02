@@ -26,6 +26,12 @@ class _$AuthStateTearOff {
     );
   }
 
+  _Unverified unverified({required AuthUser authUser}) {
+    return _Unverified(
+      authUser: authUser,
+    );
+  }
+
   _Unauthenticated unauthenticated() {
     return const _Unauthenticated();
   }
@@ -40,6 +46,7 @@ mixin _$AuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AuthUser authUser) authenticated,
+    required TResult Function(AuthUser authUser) unverified,
     required TResult Function() unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +54,7 @@ mixin _$AuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AuthUser authUser)? authenticated,
+    TResult Function(AuthUser authUser)? unverified,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) =>
@@ -55,6 +63,7 @@ mixin _$AuthState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unverified value) unverified,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +71,7 @@ mixin _$AuthState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unverified value)? unverified,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) =>
@@ -121,6 +131,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AuthUser authUser) authenticated,
+    required TResult Function(AuthUser authUser) unverified,
     required TResult Function() unauthenticated,
   }) {
     return initial();
@@ -131,6 +142,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AuthUser authUser)? authenticated,
+    TResult Function(AuthUser authUser)? unverified,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
@@ -145,6 +157,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unverified value) unverified,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
     return initial(this);
@@ -155,6 +168,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unverified value)? unverified,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) {
@@ -244,6 +258,7 @@ class _$_Authenticated implements _Authenticated {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AuthUser authUser) authenticated,
+    required TResult Function(AuthUser authUser) unverified,
     required TResult Function() unauthenticated,
   }) {
     return authenticated(authUser);
@@ -254,6 +269,7 @@ class _$_Authenticated implements _Authenticated {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AuthUser authUser)? authenticated,
+    TResult Function(AuthUser authUser)? unverified,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
@@ -268,6 +284,7 @@ class _$_Authenticated implements _Authenticated {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unverified value) unverified,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
     return authenticated(this);
@@ -278,6 +295,7 @@ class _$_Authenticated implements _Authenticated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unverified value)? unverified,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) {
@@ -294,6 +312,138 @@ abstract class _Authenticated implements AuthState {
   AuthUser get authUser => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$AuthenticatedCopyWith<_Authenticated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$UnverifiedCopyWith<$Res> {
+  factory _$UnverifiedCopyWith(
+          _Unverified value, $Res Function(_Unverified) then) =
+      __$UnverifiedCopyWithImpl<$Res>;
+  $Res call({AuthUser authUser});
+
+  $AuthUserCopyWith<$Res> get authUser;
+}
+
+/// @nodoc
+class __$UnverifiedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$UnverifiedCopyWith<$Res> {
+  __$UnverifiedCopyWithImpl(
+      _Unverified _value, $Res Function(_Unverified) _then)
+      : super(_value, (v) => _then(v as _Unverified));
+
+  @override
+  _Unverified get _value => super._value as _Unverified;
+
+  @override
+  $Res call({
+    Object? authUser = freezed,
+  }) {
+    return _then(_Unverified(
+      authUser: authUser == freezed
+          ? _value.authUser
+          : authUser // ignore: cast_nullable_to_non_nullable
+              as AuthUser,
+    ));
+  }
+
+  @override
+  $AuthUserCopyWith<$Res> get authUser {
+    return $AuthUserCopyWith<$Res>(_value.authUser, (value) {
+      return _then(_value.copyWith(authUser: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_Unverified implements _Unverified {
+  const _$_Unverified({required this.authUser});
+
+  @override
+  final AuthUser authUser;
+
+  @override
+  String toString() {
+    return 'AuthState.unverified(authUser: $authUser)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Unverified &&
+            (identical(other.authUser, authUser) ||
+                const DeepCollectionEquality()
+                    .equals(other.authUser, authUser)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(authUser);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UnverifiedCopyWith<_Unverified> get copyWith =>
+      __$UnverifiedCopyWithImpl<_Unverified>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(AuthUser authUser) authenticated,
+    required TResult Function(AuthUser authUser) unverified,
+    required TResult Function() unauthenticated,
+  }) {
+    return unverified(authUser);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(AuthUser authUser)? authenticated,
+    TResult Function(AuthUser authUser)? unverified,
+    TResult Function()? unauthenticated,
+    required TResult orElse(),
+  }) {
+    if (unverified != null) {
+      return unverified(authUser);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unverified value) unverified,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+  }) {
+    return unverified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unverified value)? unverified,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    required TResult orElse(),
+  }) {
+    if (unverified != null) {
+      return unverified(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Unverified implements AuthState {
+  const factory _Unverified({required AuthUser authUser}) = _$_Unverified;
+
+  AuthUser get authUser => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UnverifiedCopyWith<_Unverified> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -337,6 +487,7 @@ class _$_Unauthenticated implements _Unauthenticated {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(AuthUser authUser) authenticated,
+    required TResult Function(AuthUser authUser) unverified,
     required TResult Function() unauthenticated,
   }) {
     return unauthenticated();
@@ -347,6 +498,7 @@ class _$_Unauthenticated implements _Unauthenticated {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(AuthUser authUser)? authenticated,
+    TResult Function(AuthUser authUser)? unverified,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
@@ -361,6 +513,7 @@ class _$_Unauthenticated implements _Unauthenticated {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_Unverified value) unverified,
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
     return unauthenticated(this);
@@ -371,6 +524,7 @@ class _$_Unauthenticated implements _Unauthenticated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Unverified value)? unverified,
     TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) {

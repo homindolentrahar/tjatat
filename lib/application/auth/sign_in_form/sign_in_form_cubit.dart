@@ -117,4 +117,47 @@ class SignInFormCubit extends Cubit<SignInFormState> {
       ),
     );
   }
+
+  Future<void> sendForgotPasswordEmail() async {
+    Either<AuthFailure, Unit>? failureOrSuccess;
+
+    final isEmailValid = state.emailAddress.isValid();
+
+    if (isEmailValid) {
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          authFailureOrSuccessOption: none(),
+        ),
+      );
+
+      failureOrSuccess = await _authFacade.sendForgotPasswordEmail(
+        emailAddress: state.emailAddress,
+      );
+    }
+
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessage: true,
+        authFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
+  }
+
+  Future<void> verifyEmailAddress() async {
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+        authFailureOrSuccessOption: none(),
+      ),
+    );
+    final failureOrSuccess = await _authFacade.verifyEmailAddress();
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        authFailureOrSuccessOption: some(failureOrSuccess),
+      ),
+    );
+  }
 }

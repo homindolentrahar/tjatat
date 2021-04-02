@@ -33,8 +33,9 @@ class RegisterForm extends StatelessWidget {
                 context: context,
                 title: "Registration Error",
                 message: failure.maybeMap(
-                  emailAlreadyInUse: (_) => "Email already in use",
+                  emailAlreadyInUse: (_) => "Email has already used",
                   serverError: (_) => "Server Error",
+                  usernameAlreadyTaken: (_) => "Username has already taken",
                   orElse: () => "",
                 ),
                 onTap: (snackbar) {},

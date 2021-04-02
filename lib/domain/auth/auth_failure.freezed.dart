@@ -36,6 +36,22 @@ class _$AuthFailureTearOff {
     return const _InsufficientPermission();
   }
 
+  _FailedToSendForgotPasswordEmail failedToSendForgotPasswordEmail() {
+    return const _FailedToSendForgotPasswordEmail();
+  }
+
+  _EmailVerificationFailed emailVerificationFailed() {
+    return const _EmailVerificationFailed();
+  }
+
+  _UserNotSignedIn userNotSignedIn() {
+    return const _UserNotSignedIn();
+  }
+
+  _UsernameAlreadyTaken usernameAlreadyTaken() {
+    return const _UsernameAlreadyTaken();
+  }
+
   _Unexpected unexpected() {
     return const _Unexpected();
   }
@@ -53,6 +69,10 @@ mixin _$AuthFailure {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPassword,
     required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
     required TResult Function() unexpected,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +83,10 @@ mixin _$AuthFailure {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPassword,
     TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) =>
@@ -76,6 +100,12 @@ mixin _$AuthFailure {
         invalidEmailAndPassword,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
     required TResult Function(_Unexpected value) unexpected,
   }) =>
       throw _privateConstructorUsedError;
@@ -86,6 +116,11 @@ mixin _$AuthFailure {
     TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) =>
@@ -152,6 +187,10 @@ class _$_CancelledByUser implements _CancelledByUser {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPassword,
     required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
     required TResult Function() unexpected,
   }) {
     return cancelledByUser();
@@ -165,6 +204,10 @@ class _$_CancelledByUser implements _CancelledByUser {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPassword,
     TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -184,6 +227,12 @@ class _$_CancelledByUser implements _CancelledByUser {
         invalidEmailAndPassword,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return cancelledByUser(this);
@@ -197,6 +246,11 @@ class _$_CancelledByUser implements _CancelledByUser {
     TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -254,6 +308,10 @@ class _$_ServerError implements _ServerError {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPassword,
     required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
     required TResult Function() unexpected,
   }) {
     return serverError();
@@ -267,6 +325,10 @@ class _$_ServerError implements _ServerError {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPassword,
     TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -286,6 +348,12 @@ class _$_ServerError implements _ServerError {
         invalidEmailAndPassword,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return serverError(this);
@@ -299,6 +367,11 @@ class _$_ServerError implements _ServerError {
     TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -357,6 +430,10 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPassword,
     required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
     required TResult Function() unexpected,
   }) {
     return emailAlreadyInUse();
@@ -370,6 +447,10 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPassword,
     TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -389,6 +470,12 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
         invalidEmailAndPassword,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return emailAlreadyInUse(this);
@@ -402,6 +489,11 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -461,6 +553,10 @@ class _$_InvalidEmailAndPassword implements _InvalidEmailAndPassword {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPassword,
     required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
     required TResult Function() unexpected,
   }) {
     return invalidEmailAndPassword();
@@ -474,6 +570,10 @@ class _$_InvalidEmailAndPassword implements _InvalidEmailAndPassword {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPassword,
     TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -493,6 +593,12 @@ class _$_InvalidEmailAndPassword implements _InvalidEmailAndPassword {
         invalidEmailAndPassword,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return invalidEmailAndPassword(this);
@@ -506,6 +612,11 @@ class _$_InvalidEmailAndPassword implements _InvalidEmailAndPassword {
     TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -564,6 +675,10 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPassword,
     required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
     required TResult Function() unexpected,
   }) {
     return insufficientPermission();
@@ -577,6 +692,10 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPassword,
     TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -596,6 +715,12 @@ class _$_InsufficientPermission implements _InsufficientPermission {
         invalidEmailAndPassword,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return insufficientPermission(this);
@@ -609,6 +734,11 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -621,6 +751,501 @@ class _$_InsufficientPermission implements _InsufficientPermission {
 
 abstract class _InsufficientPermission implements AuthFailure {
   const factory _InsufficientPermission() = _$_InsufficientPermission;
+}
+
+/// @nodoc
+abstract class _$FailedToSendForgotPasswordEmailCopyWith<$Res> {
+  factory _$FailedToSendForgotPasswordEmailCopyWith(
+          _FailedToSendForgotPasswordEmail value,
+          $Res Function(_FailedToSendForgotPasswordEmail) then) =
+      __$FailedToSendForgotPasswordEmailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$FailedToSendForgotPasswordEmailCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$FailedToSendForgotPasswordEmailCopyWith<$Res> {
+  __$FailedToSendForgotPasswordEmailCopyWithImpl(
+      _FailedToSendForgotPasswordEmail _value,
+      $Res Function(_FailedToSendForgotPasswordEmail) _then)
+      : super(_value, (v) => _then(v as _FailedToSendForgotPasswordEmail));
+
+  @override
+  _FailedToSendForgotPasswordEmail get _value =>
+      super._value as _FailedToSendForgotPasswordEmail;
+}
+
+/// @nodoc
+class _$_FailedToSendForgotPasswordEmail
+    implements _FailedToSendForgotPasswordEmail {
+  const _$_FailedToSendForgotPasswordEmail();
+
+  @override
+  String toString() {
+    return 'AuthFailure.failedToSendForgotPasswordEmail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FailedToSendForgotPasswordEmail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPassword,
+    required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
+    required TResult Function() unexpected,
+  }) {
+    return failedToSendForgotPasswordEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPassword,
+    TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (failedToSendForgotPasswordEmail != null) {
+      return failedToSendForgotPasswordEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(_InvalidEmailAndPassword value)
+        invalidEmailAndPassword,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_Unexpected value) unexpected,
+  }) {
+    return failedToSendForgotPasswordEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (failedToSendForgotPasswordEmail != null) {
+      return failedToSendForgotPasswordEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FailedToSendForgotPasswordEmail implements AuthFailure {
+  const factory _FailedToSendForgotPasswordEmail() =
+      _$_FailedToSendForgotPasswordEmail;
+}
+
+/// @nodoc
+abstract class _$EmailVerificationFailedCopyWith<$Res> {
+  factory _$EmailVerificationFailedCopyWith(_EmailVerificationFailed value,
+          $Res Function(_EmailVerificationFailed) then) =
+      __$EmailVerificationFailedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$EmailVerificationFailedCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$EmailVerificationFailedCopyWith<$Res> {
+  __$EmailVerificationFailedCopyWithImpl(_EmailVerificationFailed _value,
+      $Res Function(_EmailVerificationFailed) _then)
+      : super(_value, (v) => _then(v as _EmailVerificationFailed));
+
+  @override
+  _EmailVerificationFailed get _value =>
+      super._value as _EmailVerificationFailed;
+}
+
+/// @nodoc
+class _$_EmailVerificationFailed implements _EmailVerificationFailed {
+  const _$_EmailVerificationFailed();
+
+  @override
+  String toString() {
+    return 'AuthFailure.emailVerificationFailed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _EmailVerificationFailed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPassword,
+    required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
+    required TResult Function() unexpected,
+  }) {
+    return emailVerificationFailed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPassword,
+    TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (emailVerificationFailed != null) {
+      return emailVerificationFailed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(_InvalidEmailAndPassword value)
+        invalidEmailAndPassword,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_Unexpected value) unexpected,
+  }) {
+    return emailVerificationFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (emailVerificationFailed != null) {
+      return emailVerificationFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmailVerificationFailed implements AuthFailure {
+  const factory _EmailVerificationFailed() = _$_EmailVerificationFailed;
+}
+
+/// @nodoc
+abstract class _$UserNotSignedInCopyWith<$Res> {
+  factory _$UserNotSignedInCopyWith(
+          _UserNotSignedIn value, $Res Function(_UserNotSignedIn) then) =
+      __$UserNotSignedInCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$UserNotSignedInCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$UserNotSignedInCopyWith<$Res> {
+  __$UserNotSignedInCopyWithImpl(
+      _UserNotSignedIn _value, $Res Function(_UserNotSignedIn) _then)
+      : super(_value, (v) => _then(v as _UserNotSignedIn));
+
+  @override
+  _UserNotSignedIn get _value => super._value as _UserNotSignedIn;
+}
+
+/// @nodoc
+class _$_UserNotSignedIn implements _UserNotSignedIn {
+  const _$_UserNotSignedIn();
+
+  @override
+  String toString() {
+    return 'AuthFailure.userNotSignedIn()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _UserNotSignedIn);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPassword,
+    required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
+    required TResult Function() unexpected,
+  }) {
+    return userNotSignedIn();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPassword,
+    TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (userNotSignedIn != null) {
+      return userNotSignedIn();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(_InvalidEmailAndPassword value)
+        invalidEmailAndPassword,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_Unexpected value) unexpected,
+  }) {
+    return userNotSignedIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (userNotSignedIn != null) {
+      return userNotSignedIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserNotSignedIn implements AuthFailure {
+  const factory _UserNotSignedIn() = _$_UserNotSignedIn;
+}
+
+/// @nodoc
+abstract class _$UsernameAlreadyTakenCopyWith<$Res> {
+  factory _$UsernameAlreadyTakenCopyWith(_UsernameAlreadyTaken value,
+          $Res Function(_UsernameAlreadyTaken) then) =
+      __$UsernameAlreadyTakenCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$UsernameAlreadyTakenCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$UsernameAlreadyTakenCopyWith<$Res> {
+  __$UsernameAlreadyTakenCopyWithImpl(
+      _UsernameAlreadyTaken _value, $Res Function(_UsernameAlreadyTaken) _then)
+      : super(_value, (v) => _then(v as _UsernameAlreadyTaken));
+
+  @override
+  _UsernameAlreadyTaken get _value => super._value as _UsernameAlreadyTaken;
+}
+
+/// @nodoc
+class _$_UsernameAlreadyTaken implements _UsernameAlreadyTaken {
+  const _$_UsernameAlreadyTaken();
+
+  @override
+  String toString() {
+    return 'AuthFailure.usernameAlreadyTaken()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _UsernameAlreadyTaken);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPassword,
+    required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
+    required TResult Function() unexpected,
+  }) {
+    return usernameAlreadyTaken();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPassword,
+    TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (usernameAlreadyTaken != null) {
+      return usernameAlreadyTaken();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(_InvalidEmailAndPassword value)
+        invalidEmailAndPassword,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_Unexpected value) unexpected,
+  }) {
+    return usernameAlreadyTaken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (usernameAlreadyTaken != null) {
+      return usernameAlreadyTaken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UsernameAlreadyTaken implements AuthFailure {
+  const factory _UsernameAlreadyTaken() = _$_UsernameAlreadyTaken;
 }
 
 /// @nodoc
@@ -666,6 +1291,10 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPassword,
     required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
     required TResult Function() unexpected,
   }) {
     return unexpected();
@@ -679,6 +1308,10 @@ class _$_Unexpected implements _Unexpected {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPassword,
     TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -698,6 +1331,12 @@ class _$_Unexpected implements _Unexpected {
         invalidEmailAndPassword,
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return unexpected(this);
@@ -711,6 +1350,11 @@ class _$_Unexpected implements _Unexpected {
     TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
     TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {

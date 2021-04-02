@@ -7,6 +7,7 @@ import 'package:tjatat/application/auth/sign_in_form/sign_in_form_cubit.dart';
 import 'package:tjatat/common/animations/page_transitions.dart';
 import 'package:tjatat/common/constants/constant.dart';
 import 'package:tjatat/common/themes/app_color.dart';
+import 'package:tjatat/presentation/auth/forgot_password_page.dart';
 import 'package:tjatat/presentation/auth/register_page.dart';
 import 'package:tjatat/presentation/auth/widgets/auth_form_field.dart';
 import 'package:tjatat/presentation/core/widgets/app_back_button.dart';
@@ -32,7 +33,7 @@ class LoginForm extends StatelessWidget {
               Navigator.pop(context);
               SnackbarHelper.error(
                 context: context,
-                title: "Authentication Error",
+                title: "Authentication Failed",
                 message: failure.maybeMap(
                   invalidEmailAndPassword: (_) => "Invalid email and password",
                   cancelledByUser: (_) => "User cancel login with Google",
@@ -153,18 +154,29 @@ class _LoginFormFormArea extends StatelessWidget {
                 context.read<SignInFormCubit>().passwordChanged(value);
               },
             ),
-            // const SizedBox(height: 15),
-            // Align(
-            //   alignment: Alignment.centerRight,
-            //   child: GestureDetector(
-            //     onTap: () {},
-            //     child: Text(
-            //       "Forgot Password?",
-            //       style: Theme.of(context).textTheme.subtitle2,
-            //     ),
-            //   ),
-            // ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 15),
+            Align(
+              alignment: Alignment.centerRight,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(5),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    SlideLeft(page: ForgotPasswordPage()),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Text(
+                    "Forgot Password",
+                    style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 45),
             _buildButtons(context),
           ],
         ),

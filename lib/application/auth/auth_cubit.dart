@@ -19,7 +19,16 @@ class AuthCubit extends Cubit<AuthState> {
     emit(
       userOption.fold(
         () => const AuthState.unauthenticated(),
-        (authUser) => AuthState.authenticated(authUser: authUser),
+        (authUser) {
+          final isVerified = _authFacade.isUserVerified;
+          if (isVerified) {
+            return AuthState.authenticated(authUser: authUser);
+          } else {
+            //  Send verification email
+            _verifyAccount();
+            return AuthState.unverified(authUser: authUser);
+          }
+        },
       ),
     );
   }
@@ -27,5 +36,9 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> signOut() async {
     await _authFacade.signOut();
     emit(const AuthState.unauthenticated());
+  }
+
+  Future<void> _verifyAccount() async {
+    await _authFacade.verifyEmailAddress();
   }
 }
