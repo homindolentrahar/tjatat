@@ -12,6 +12,8 @@ import 'package:tjatat/utils/helpers/format_helper.dart';
 import 'package:tjatat/utils/helpers/snackbar_helper.dart';
 
 class ForgotPasswordForm extends StatelessWidget {
+  final _emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignInFormCubit, SignInFormState>(
@@ -28,10 +30,11 @@ class ForgotPasswordForm extends StatelessWidget {
               Navigator.pop(context);
               SnackbarHelper.error(
                 context: context,
-                title: "Failed to send email",
+                title: Constant.failedToSendEmail,
                 message: failure.maybeMap(
                   failedToSendForgotPasswordEmail: (_) =>
-                      "There is something error when sending email",
+                      Constant.errorSendingEmail,
+                  networkUnavailable: (_) => Constant.networkUnavailable,
                   orElse: () => "",
                 ),
                 onTap: (snackbar) {},
@@ -50,6 +53,7 @@ class ForgotPasswordForm extends StatelessWidget {
               );
               //  Start the timer
               context.read<TimerCubit>().start(duration);
+              _emailController.clear();
             },
           ),
         );
@@ -64,7 +68,7 @@ class ForgotPasswordForm extends StatelessWidget {
             const SizedBox(height: 30),
             _ForgotPasswordFormHeader(),
             const SizedBox(height: 30),
-            _ForgotPasswordFormFormArea(),
+            _ForgotPasswordFormFormArea(emailController: _emailController),
             const SizedBox(height: 60),
             _ForgotPasswordFormFooter(),
           ],
@@ -101,6 +105,10 @@ class _ForgotPasswordFormHeader extends StatelessWidget {
 }
 
 class _ForgotPasswordFormFormArea extends StatelessWidget {
+  final TextEditingController emailController;
+
+  const _ForgotPasswordFormFormArea({required this.emailController});
+
   Widget _buildButton(BuildContext context) {
     return BlocBuilder<TimerCubit, TimerState>(
       bloc: context.read<TimerCubit>(),
@@ -138,6 +146,7 @@ class _ForgotPasswordFormFormArea extends StatelessWidget {
         child: Column(
           children: [
             AuthFormField(
+              controller: emailController,
               keyboardType: TextInputType.emailAddress,
               inputType: AuthFormFieldInput.email,
               action: TextInputAction.done,

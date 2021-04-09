@@ -1,7 +1,5 @@
 import 'package:tjatat/domain/core/failures.dart';
 
-class NotAuthenticatedError extends Error {}
-
 class UnexpectedValueError extends Error {
   final ValueFailure valueFailure;
 

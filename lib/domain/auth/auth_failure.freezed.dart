@@ -52,6 +52,10 @@ class _$AuthFailureTearOff {
     return const _UsernameAlreadyTaken();
   }
 
+  _NetworkUnavailable networkUnavailable() {
+    return const _NetworkUnavailable();
+  }
+
   _Unexpected unexpected() {
     return const _Unexpected();
   }
@@ -73,6 +77,7 @@ mixin _$AuthFailure {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) =>
       throw _privateConstructorUsedError;
@@ -87,6 +92,7 @@ mixin _$AuthFailure {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) =>
@@ -106,6 +112,7 @@ mixin _$AuthFailure {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +128,7 @@ mixin _$AuthFailure {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) =>
@@ -191,6 +199,7 @@ class _$_CancelledByUser implements _CancelledByUser {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return cancelledByUser();
@@ -208,6 +217,7 @@ class _$_CancelledByUser implements _CancelledByUser {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -233,6 +243,7 @@ class _$_CancelledByUser implements _CancelledByUser {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return cancelledByUser(this);
@@ -251,6 +262,7 @@ class _$_CancelledByUser implements _CancelledByUser {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -312,6 +324,7 @@ class _$_ServerError implements _ServerError {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return serverError();
@@ -329,6 +342,7 @@ class _$_ServerError implements _ServerError {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -354,6 +368,7 @@ class _$_ServerError implements _ServerError {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return serverError(this);
@@ -372,6 +387,7 @@ class _$_ServerError implements _ServerError {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -434,6 +450,7 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return emailAlreadyInUse();
@@ -451,6 +468,7 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -476,6 +494,7 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return emailAlreadyInUse(this);
@@ -494,6 +513,7 @@ class _$_EmailAlreadyInUse implements _EmailAlreadyInUse {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -557,6 +577,7 @@ class _$_InvalidEmailAndPassword implements _InvalidEmailAndPassword {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return invalidEmailAndPassword();
@@ -574,6 +595,7 @@ class _$_InvalidEmailAndPassword implements _InvalidEmailAndPassword {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -599,6 +621,7 @@ class _$_InvalidEmailAndPassword implements _InvalidEmailAndPassword {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return invalidEmailAndPassword(this);
@@ -617,6 +640,7 @@ class _$_InvalidEmailAndPassword implements _InvalidEmailAndPassword {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -679,6 +703,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return insufficientPermission();
@@ -696,6 +721,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -721,6 +747,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return insufficientPermission(this);
@@ -739,6 +766,7 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -806,6 +834,7 @@ class _$_FailedToSendForgotPasswordEmail
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return failedToSendForgotPasswordEmail();
@@ -823,6 +852,7 @@ class _$_FailedToSendForgotPasswordEmail
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -848,6 +878,7 @@ class _$_FailedToSendForgotPasswordEmail
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return failedToSendForgotPasswordEmail(this);
@@ -866,6 +897,7 @@ class _$_FailedToSendForgotPasswordEmail
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -930,6 +962,7 @@ class _$_EmailVerificationFailed implements _EmailVerificationFailed {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return emailVerificationFailed();
@@ -947,6 +980,7 @@ class _$_EmailVerificationFailed implements _EmailVerificationFailed {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -972,6 +1006,7 @@ class _$_EmailVerificationFailed implements _EmailVerificationFailed {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return emailVerificationFailed(this);
@@ -990,6 +1025,7 @@ class _$_EmailVerificationFailed implements _EmailVerificationFailed {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -1052,6 +1088,7 @@ class _$_UserNotSignedIn implements _UserNotSignedIn {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return userNotSignedIn();
@@ -1069,6 +1106,7 @@ class _$_UserNotSignedIn implements _UserNotSignedIn {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -1094,6 +1132,7 @@ class _$_UserNotSignedIn implements _UserNotSignedIn {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return userNotSignedIn(this);
@@ -1112,6 +1151,7 @@ class _$_UserNotSignedIn implements _UserNotSignedIn {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -1174,6 +1214,7 @@ class _$_UsernameAlreadyTaken implements _UsernameAlreadyTaken {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return usernameAlreadyTaken();
@@ -1191,6 +1232,7 @@ class _$_UsernameAlreadyTaken implements _UsernameAlreadyTaken {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -1216,6 +1258,7 @@ class _$_UsernameAlreadyTaken implements _UsernameAlreadyTaken {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return usernameAlreadyTaken(this);
@@ -1234,6 +1277,7 @@ class _$_UsernameAlreadyTaken implements _UsernameAlreadyTaken {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
@@ -1246,6 +1290,132 @@ class _$_UsernameAlreadyTaken implements _UsernameAlreadyTaken {
 
 abstract class _UsernameAlreadyTaken implements AuthFailure {
   const factory _UsernameAlreadyTaken() = _$_UsernameAlreadyTaken;
+}
+
+/// @nodoc
+abstract class _$NetworkUnavailableCopyWith<$Res> {
+  factory _$NetworkUnavailableCopyWith(
+          _NetworkUnavailable value, $Res Function(_NetworkUnavailable) then) =
+      __$NetworkUnavailableCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$NetworkUnavailableCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$NetworkUnavailableCopyWith<$Res> {
+  __$NetworkUnavailableCopyWithImpl(
+      _NetworkUnavailable _value, $Res Function(_NetworkUnavailable) _then)
+      : super(_value, (v) => _then(v as _NetworkUnavailable));
+
+  @override
+  _NetworkUnavailable get _value => super._value as _NetworkUnavailable;
+}
+
+/// @nodoc
+class _$_NetworkUnavailable implements _NetworkUnavailable {
+  const _$_NetworkUnavailable();
+
+  @override
+  String toString() {
+    return 'AuthFailure.networkUnavailable()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _NetworkUnavailable);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPassword,
+    required TResult Function() insufficientPermission,
+    required TResult Function() failedToSendForgotPasswordEmail,
+    required TResult Function() emailVerificationFailed,
+    required TResult Function() userNotSignedIn,
+    required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
+    required TResult Function() unexpected,
+  }) {
+    return networkUnavailable();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPassword,
+    TResult Function()? insufficientPermission,
+    TResult Function()? failedToSendForgotPasswordEmail,
+    TResult Function()? emailVerificationFailed,
+    TResult Function()? userNotSignedIn,
+    TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (networkUnavailable != null) {
+      return networkUnavailable();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(_InvalidEmailAndPassword value)
+        invalidEmailAndPassword,
+    required TResult Function(_InsufficientPermission value)
+        insufficientPermission,
+    required TResult Function(_FailedToSendForgotPasswordEmail value)
+        failedToSendForgotPasswordEmail,
+    required TResult Function(_EmailVerificationFailed value)
+        emailVerificationFailed,
+    required TResult Function(_UserNotSignedIn value) userNotSignedIn,
+    required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
+    required TResult Function(_Unexpected value) unexpected,
+  }) {
+    return networkUnavailable(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(_InvalidEmailAndPassword value)? invalidEmailAndPassword,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_FailedToSendForgotPasswordEmail value)?
+        failedToSendForgotPasswordEmail,
+    TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
+    TResult Function(_UserNotSignedIn value)? userNotSignedIn,
+    TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
+    TResult Function(_Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (networkUnavailable != null) {
+      return networkUnavailable(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NetworkUnavailable implements AuthFailure {
+  const factory _NetworkUnavailable() = _$_NetworkUnavailable;
 }
 
 /// @nodoc
@@ -1295,6 +1465,7 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function() emailVerificationFailed,
     required TResult Function() userNotSignedIn,
     required TResult Function() usernameAlreadyTaken,
+    required TResult Function() networkUnavailable,
     required TResult Function() unexpected,
   }) {
     return unexpected();
@@ -1312,6 +1483,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function()? emailVerificationFailed,
     TResult Function()? userNotSignedIn,
     TResult Function()? usernameAlreadyTaken,
+    TResult Function()? networkUnavailable,
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
@@ -1337,6 +1509,7 @@ class _$_Unexpected implements _Unexpected {
         emailVerificationFailed,
     required TResult Function(_UserNotSignedIn value) userNotSignedIn,
     required TResult Function(_UsernameAlreadyTaken value) usernameAlreadyTaken,
+    required TResult Function(_NetworkUnavailable value) networkUnavailable,
     required TResult Function(_Unexpected value) unexpected,
   }) {
     return unexpected(this);
@@ -1355,6 +1528,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function(_EmailVerificationFailed value)? emailVerificationFailed,
     TResult Function(_UserNotSignedIn value)? userNotSignedIn,
     TResult Function(_UsernameAlreadyTaken value)? usernameAlreadyTaken,
+    TResult Function(_NetworkUnavailable value)? networkUnavailable,
     TResult Function(_Unexpected value)? unexpected,
     required TResult orElse(),
   }) {

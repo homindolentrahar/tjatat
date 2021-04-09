@@ -31,11 +31,13 @@ class RegisterForm extends StatelessWidget {
               Navigator.pop(context);
               SnackbarHelper.error(
                 context: context,
-                title: "Registration Error",
+                title: AuthConstant.registrationFailed,
                 message: failure.maybeMap(
-                  emailAlreadyInUse: (_) => "Email has already used",
-                  serverError: (_) => "Server Error",
-                  usernameAlreadyTaken: (_) => "Username has already taken",
+                  emailAlreadyInUse: (_) => AuthConstant.emailHasAlreadyUsed,
+                  serverError: (_) => Constant.serverError,
+                  usernameAlreadyTaken: (_) =>
+                      AuthConstant.usernameHasAlreadyTaken,
+                  networkUnavailable: (_) => Constant.networkUnavailable,
                   orElse: () => "",
                 ),
                 onTap: (snackbar) {},
@@ -91,6 +93,10 @@ class _RegisterFormHeader extends StatelessWidget {
 }
 
 class _RegisterFormFormArea extends StatelessWidget {
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   Widget _buildButtons(BuildContext context) {
     return RoundedButton(
       width: Constant.screenWidth(context) * 0.8,
@@ -112,6 +118,7 @@ class _RegisterFormFormArea extends StatelessWidget {
         child: Column(
           children: [
             AuthFormField(
+              controller: usernameController,
               inputType: AuthFormFieldInput.username,
               keyboardType: TextInputType.name,
               hintText: "Username",
@@ -122,6 +129,7 @@ class _RegisterFormFormArea extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             AuthFormField(
+              controller: emailController,
               inputType: AuthFormFieldInput.email,
               hintText: "Email",
               icon: SvgPicture.asset("assets/images/ic_email.svg"),
@@ -131,6 +139,7 @@ class _RegisterFormFormArea extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             AuthFormField(
+              controller: passwordController,
               inputType: AuthFormFieldInput.password,
               obscure: true,
               keyboardType: TextInputType.visiblePassword,

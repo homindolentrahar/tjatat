@@ -1,6 +1,10 @@
+import 'dart:async';
+import 'dart:developer' as dev;
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tjatat/application/auth/auth_cubit.dart';
 import 'package:tjatat/application/auth/sign_in_form/sign_in_form_cubit.dart';
@@ -11,9 +15,23 @@ import 'package:tjatat/utils/helpers/dialog_helper.dart';
 import 'package:tjatat/utils/helpers/format_helper.dart';
 import 'package:tjatat/utils/helpers/snackbar_helper.dart';
 
-class EmailVerificationForm extends StatelessWidget {
+class EmailVerificationForm extends HookWidget {
   @override
   Widget build(BuildContext context) {
+    Timer? timer;
+
+    useEffect(
+      () {
+        timer = Timer.periodic(const Duration(seconds: 10), (timer) {
+          dev.log("Running every 10 seconds");
+          context.read<AuthCubit>().checkVerifiedStatus();
+        });
+
+        return timer?.cancel;
+      },
+      [],
+    );
+
     return BlocListener<SignInFormCubit, SignInFormState>(
       bloc: context.read<SignInFormCubit>(),
       listener: (ctx, state) {
@@ -28,12 +46,12 @@ class EmailVerificationForm extends StatelessWidget {
               Navigator.pop(context);
               SnackbarHelper.error(
                 context: context,
-                title: "Failed to send email",
+                title: Constant.failedToSendEmail,
                 message: failure.maybeMap(
-                  userNotSignedIn: (_) =>
-                      "Cannot send verification email, user is not signed in",
+                  userNotSignedIn: (_) => AuthConstant.userIsNotSignedIn,
                   failedToSendForgotPasswordEmail: (_) =>
-                      "There was something error happened",
+                      Constant.failedToSendEmail,
+                  networkUnavailable: (_) => Constant.networkUnavailable,
                   orElse: () => "",
                 ),
                 onTap: (snackbar) {},
@@ -83,7 +101,7 @@ class EmailVerificationForm extends StatelessWidget {
                   SizedBox(
                     width: Constant.screenWidth(context) * 0.75,
                     child: Text(
-                      "We’ve sent you verification email to confirm your account. Check it please...and come back here 😺",
+                      "We’ve sent you verification email to confirm your account. Check it please...and come back here 😺\nPlease wait around 10 secs after you verify your email before getting redirected...",
                       style: Theme.of(context).textTheme.subtitle2,
                       textAlign: TextAlign.center,
                     ),

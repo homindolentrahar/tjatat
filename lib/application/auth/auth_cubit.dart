@@ -1,3 +1,5 @@
+import 'dart:developer' as dev;
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -20,7 +22,12 @@ class AuthCubit extends Cubit<AuthState> {
       userOption.fold(
         () => const AuthState.unauthenticated(),
         (authUser) {
+          if (!_authFacade.isUserVerified) {
+            _authFacade.reload();
+          }
+
           final isVerified = _authFacade.isUserVerified;
+
           if (isVerified) {
             return AuthState.authenticated(authUser: authUser);
           } else {
@@ -31,6 +38,23 @@ class AuthCubit extends Cubit<AuthState> {
         },
       ),
     );
+  }
+
+  Future<void> checkVerifiedStatus() async {
+    _authFacade.reload();
+
+    final userOption = await _authFacade.getSignedInUser();
+    final isVerified = _authFacade.isUserVerified;
+
+    if (isVerified) {
+      dev.log("Verified !", name: "AuthCubit");
+      emit(userOption.fold(
+        () => const AuthState.unauthenticated(),
+        (authUser) => AuthState.authenticated(authUser: authUser),
+      ));
+    }
+
+    dev.log("Unverified, retrying...", name: "AuthCubit");
   }
 
   Future<void> signOut() async {

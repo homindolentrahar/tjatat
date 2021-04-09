@@ -13,7 +13,7 @@ part of 'auth_user_dto.dart';
 //     lastSignedIn: json['lastSignedIn'] as int,
 //   );
 // }
-
+//
 // Map<String, dynamic> _$AuthUserDtoToJson(AuthUserDto instance) =>
 //     <String, dynamic>{
 //       'username': instance.username,

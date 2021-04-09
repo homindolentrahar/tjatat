@@ -14,6 +14,7 @@ typedef AuthFormFieldValidator = String? Function(String? value);
 enum AuthFormFieldInput { email, password, username }
 
 class AuthFormField extends HookWidget {
+  final TextEditingController? controller;
   final AuthFormFieldInput inputType;
   final String hintText;
   final Widget icon;
@@ -25,6 +26,7 @@ class AuthFormField extends HookWidget {
 
   const AuthFormField({
     Key? key,
+    this.controller,
     required this.inputType,
     required this.hintText,
     required this.icon,
@@ -55,10 +57,8 @@ class AuthFormField extends HookWidget {
 
     useEffect(() {
       if (_validator.value != "") {
-        // _errorSizeAnimationController.forward();
         _errorContainer.value = 56.0;
       } else {
-        // _errorSizeAnimationController.reverse();
         _errorContainer.value = 0.0;
       }
     }, [_validator.value]);
@@ -84,6 +84,7 @@ class AuthFormField extends HookWidget {
               const SizedBox(width: 15),
               Expanded(
                 child: TextFormField(
+                  controller: controller,
                   keyboardType: keyboardType,
                   textInputAction: action,
                   obscureText: _obscureText,
@@ -129,7 +130,6 @@ class AuthFormField extends HookWidget {
                       (_) => "",
                     );
 
-                    // dev.log(value!);
                     _validator.value = errorMessage;
 
                     return null;

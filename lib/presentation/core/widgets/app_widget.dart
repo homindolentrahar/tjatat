@@ -2,8 +2,10 @@ import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 import 'package:supercharged/supercharged.dart';
 import 'package:tjatat/application/auth/auth_cubit.dart';
+import 'package:tjatat/application/core/network/network_info_cubit.dart';
 import 'package:tjatat/application/core/timer/timer_cubit.dart';
 import 'package:tjatat/common/animations/page_transitions.dart';
 import 'package:tjatat/common/themes/theme.dart';
@@ -27,6 +29,9 @@ class AppWidget extends StatelessWidget {
         ),
         BlocProvider<TimerCubit>(
           create: (_) => getIt<TimerCubit>(),
+        ),
+        BlocProvider<NetworkInfoCubit>(
+          create: (_) => getIt<NetworkInfoCubit>(),
         ),
       ],
       child: MaterialApp(

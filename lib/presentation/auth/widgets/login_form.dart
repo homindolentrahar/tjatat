@@ -33,11 +33,13 @@ class LoginForm extends StatelessWidget {
               Navigator.pop(context);
               SnackbarHelper.error(
                 context: context,
-                title: "Authentication Failed",
+                title: AuthConstant.authenticationFailed,
                 message: failure.maybeMap(
-                  invalidEmailAndPassword: (_) => "Invalid email and password",
-                  cancelledByUser: (_) => "User cancel login with Google",
-                  serverError: (_) => "Something wrong with the server",
+                  invalidEmailAndPassword: (_) =>
+                      AuthConstant.invalidUsernameAndPassword,
+                  cancelledByUser: (_) => AuthConstant.cancelledByUser,
+                  serverError: (_) => Constant.serverError,
+                  networkUnavailable: (_) => Constant.networkUnavailable,
                   orElse: () => "",
                 ),
                 onTap: (snackbar) {},
@@ -93,6 +95,9 @@ class _LoginFormHeader extends StatelessWidget {
 }
 
 class _LoginFormFormArea extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   Widget _buildButtons(BuildContext context) {
     return Column(
       children: [
@@ -135,6 +140,7 @@ class _LoginFormFormArea extends StatelessWidget {
         child: Column(
           children: [
             AuthFormField(
+              controller: emailController,
               inputType: AuthFormFieldInput.email,
               hintText: "Email",
               icon: SvgPicture.asset("assets/images/ic_email.svg"),
@@ -144,6 +150,7 @@ class _LoginFormFormArea extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             AuthFormField(
+              controller: passwordController,
               inputType: AuthFormFieldInput.password,
               obscure: true,
               keyboardType: TextInputType.visiblePassword,

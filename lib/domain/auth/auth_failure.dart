@@ -25,5 +25,7 @@ class AuthFailure with _$AuthFailure {
 
   const factory AuthFailure.usernameAlreadyTaken() = _UsernameAlreadyTaken;
 
+  const factory AuthFailure.networkUnavailable() = _NetworkUnavailable;
+
   const factory AuthFailure.unexpected() = _Unexpected;
 }
